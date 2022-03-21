@@ -21,15 +21,15 @@ def show_homepage():
 def list_cupcakes():
     """Returns JSON w/ all cupcakes"""
     all_cupcakes = [cupcake.serialize() for cupcake in Cupcake.query.all()]
-    return jsonify(cupcakes=all_cupcakes)
+    return jsonify(cupcakes = all_cupcakes)
   
 @app.route('/api/cupcakes/<int:id>')
 def get_cupcake(id):
     """Returns JSON data for a single cupcake"""
-    cupcake=Cupcake.query.get_or_404(id)
-    return jsonify(cupcake=cupcake.serialize())
+    cupcake = Cupcake.query.get_or_404(id)
+    return jsonify(cupcake = cupcake.serialize())
 
-@app.route('/api/cupcakes', methods=["POST"]) #TypeError: 'NoneType' object is not subscriptable
+@app.route('/api/cupcakes', methods=["POST"]) 
 def create_cupcake():
     """Create a cupcake with flavor, size, rating and returns JSON of that created cupcake"""
     new_cupcake = Cupcake(flavor = request.json['flavor'], 
