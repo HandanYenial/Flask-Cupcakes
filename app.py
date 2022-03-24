@@ -61,4 +61,17 @@ def delete_cupcake(id):#
     db.session.commit()
     return jsonify(message="deleted")
 
+#########
+#1.  open up app.py    
+#2.  start the virtual environment
+    
+   # **$ python3 -m venv venv**
+    #**$ source venv/bin/activate**
+ #3.  ** (venv) pip3 install flask**
+ #4.  **venv) $ pip3 install flask-debugtoolbar**
+ #5.  install sql-alchemy and psycopg2
+    
+    #**$ pip install psycopg2-binary**
+    #**$ pip install flask-sqlalchemy**
+    
 
